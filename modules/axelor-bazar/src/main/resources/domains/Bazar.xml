@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+  xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.1.xsd">
+
+  <module package="com.axelor.bazar.db" name="bazar" />
+  <entity name="Bazar">
+    <string name="reference" title="Reference" />
+    <string name="name" title="Name" />
+    <string name="location" title="Location" />
+    <integer name="capacity" title="Capacity" />
+    <integer name="statusSelect" title="Status"/>
+    <many-to-one name="file1" ref="com.axelor.meta.db.MetaFile" title="Photo"/>
+    <string name="fullName" title="FullName" namecolumn="true" >
+    <![CDATA[
+        String fullName = "";
+
+        if(name != null)  {
+        fullName += name;
+      }
+
+      if(location != null)  {
+        fullName += "-" + location;
+      }
+
+      if (capacity != null) {
+        fullName += "-" + capacity;
+      }
+        return fullName;
+      ]]>
+    </string>
+
+
+  </entity>
+</domain-models>

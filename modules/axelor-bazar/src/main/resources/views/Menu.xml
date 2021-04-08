@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+  <!-- Main Menu Event Module -->
+  <menuitem name="menu-bazar-main-module" title="Bazar"
+    icon-background="blue" />
+
+  <menuitem name="menu-bazar-main-all" parent="menu-bazar-main-module"
+    title="Bazar" action="menu.action.bazar.main.view.all" />
+
+  <action-view name="menu.action.bazar.main.view.all" title="Bazar"
+    model="com.axelor.bazar.db.Bazar">
+    <view type="grid" name="bazar-grid" />
+    <view type="form" name="bazar-form" />
+  </action-view>
+
+  <menuitem name="menu-main-customer-all" parent="menu-bazar-main-module"
+    title="Customer Registration" action="menu.action.bazar.customer.view.all" />
+
+  <action-view name="menu.action.bazar.customer.view.all"
+    title="Customer Registration" model="com.axelor.bazar.db.Customer">
+    <view type="grid" name="customer-grid" />
+    <view type="form" name="customer-form" />
+  </action-view>
+
+
+  <menuitem name="menu-main-bazar-entry-all" parent="menu-bazar-main-module"
+    title="Bazar Entry" action="menu.action.bazar.entry.view.all" />
+
+  <action-view name="menu.action.bazar.entry.view.all"
+    title="Bazar Entry" model="com.axelor.bazar.db.BazarEntry">
+    <view type="grid" name="bazar-entry-grid" />
+    <view type="form" name="bazar-entry-form" />
+  </action-view>
+
+
+</object-views>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+  xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.1.xsd">
+
+  <module package="com.axelor.bazar.db" name="bazar" />
+  <entity name="Customer">
+    <string name="reference" title="Reference" />
+    <string name="firstName" title="First Name" />
+    <string name="lastName" title="Last Name" />
+    <string name="phone1" title="Mobile No." max="10" />
+    <string name="phone2" title="Alternative Mobile No." max="10" />
+    <string name="addressLine1" title=" Address 1" />
+    <string name="addressLine2" title=" Address 2" />
+    <string name="location" title=" AddressLocation" />
+    <integer name="amountCharge" title="amountCharge" />
+    <integer name="statusSelect" title="Status"/>
+    <many-to-one name="photoImage" ref="com.axelor.meta.db.MetaFile" title="Photo Image"/>
+    <many-to-one name="proofImage" ref="com.axelor.meta.db.MetaFile" title="Proof Image"/>
+
+    <many-to-one name="bazarEntry" ref="com.axelor.bazar.db.BazarEntry"/>
+
+    <string name="fullName" title="FullName" namecolumn="true" >
+    <![CDATA[
+        String fullName = "";
+
+        if(firstName != null)  {
+        fullName += firstName;
+      }
+      if(lastName != null)  {
+        fullName += " " +lastName;
+      }
+
+      if(phone1 != null)  {
+        fullName += " - " +phone1;
+      }
+
+        return fullName;
+      ]]>
+    </string>
+
+
+
+
+  </entity>
+</domain-models>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+
+  <grid model="com.axelor.bazar.db.Customer" title="Customer"
+    name="customer-grid">
+
+    <field name="reference" />
+    <field name="firstName" />
+    <field name="lastName" />
+    <field name="phone1" />
+    <field name="phone2" />
+    <field name="addressLine1" />
+    <field name="addressLine2" />
+    <field name="location" />
+
+  </grid>
+
+  <form model="com.axelor.bazar.db.Customer" title="Customer"
+    name="customer-form">
+    <panel name="mainPanel">
+      <field name="reference" />
+      <field name="firstName" />
+      <field name="lastName" />
+      <field name="phone1">
+        <viewer><![CDATA[
+              <a href="tel:{{record.phone1}}">{{record.phone1}}</a>
+            ]]>
+            </viewer>
+      </field>
+      <field name="phone2" />
+      <field name="addressLine1" />
+      <field name="addressLine2" />
+      <field name="location" />
+      <field name="amountCharge" />
+      <field name="location" />
+      <panel colSpan="4">
+        <field name="photoImage" widget="Image"></field>
+        <field name="proofImage" widget="Image"></field>
+      </panel>
+
+    </panel>
+  </form>
+
+</object-views>

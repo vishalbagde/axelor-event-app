@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+  xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.1.xsd">
+
+  <module package="com.axelor.bazar.db" name="bazar" />
+  <entity name="BazarEntry">
+    <string name="reference" title="Reference" />
+    <date name="bazarDate" title="Date" />
+    <many-to-one name="bazar" ref="com.axelor.bazar.db.Bazar"
+      title="Bazar" />
+
+    <one-to-many name="customerLine"
+      ref="com.axelor.bazar.db.CustomerLine" mappedBy="customerLine"
+      title="Customer List" />
+
+    <string name="statusSelect"
+      selection="bazar.entry.status.selection" default="pending"
+      readonly="true" title="Bazar Entry Status" />
+
+    <decimal name="totalAmount" readonly="true"
+      title="Total Amount" />
+    <decimal name="totalEntry" readonly="true" title="Total Entry" />
+
+  </entity>
+</domain-models>

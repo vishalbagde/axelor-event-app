@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+  <selection name="bazar.entry.status.selection">
+    <option value="pending">Pending</option>
+    <option value="confirm">Confirm</option>
+  </selection>
+
+  <grid model="com.axelor.bazar.db.BazarEntry" title="Bazar Entry"
+    name="bazar-entry-grid">
+
+    <field name="reference" />
+    <field name="bazarDate" />
+    <field name="bazar" />
+    <field name="totalEntry" />
+    <field name="totalAmount" />
+
+  </grid>
+
+  <form model="com.axelor.bazar.db.BazarEntry" title="Bazar Entry"
+    name="bazar-entry-form" width="100%">
+    <panel name="mainPanel">
+      <field name="reference" />
+      <field name="bazarDate" />
+      <field name="bazar" />
+      <field name="totalEntry" />
+      <field name="totalAmount" />
+    </panel>
+
+    <panel-related field="customerLine" colSpan="12" >
+    </panel-related>
+  </form>
+
+</object-views>
